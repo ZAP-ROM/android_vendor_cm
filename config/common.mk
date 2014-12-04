@@ -329,6 +329,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 -include vendor/sokp-priv/keys/keys.mk
 
+SQUISHER_SCRIPT := vendor/spirit/tools/squisher
+
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
