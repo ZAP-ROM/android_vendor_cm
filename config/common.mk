@@ -322,7 +322,7 @@ SOKP_Version=RC-01-L-5.0.2-LRX22G
 SOKP_MOD_VERSION := $(SOKP_Version)-$(shell date -u +%Y%m%d)$(SOKP_EXTRAVERSION)-$(SOKP_BUILD)
  
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.sokp.version=$(SOKP_VERSION) \
+  ro.sokp.version=$(SOKP_Version) \
   ro.sokp.releasetype=$(SOKP_BUILDTYPE) \
   ro.modversion=$(SOKP_MOD_VERSION) \
   ro.legal.url=http://sonic-developers.com/disclaimer/
