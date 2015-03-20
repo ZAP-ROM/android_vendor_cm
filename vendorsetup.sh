@@ -13,3 +13,4 @@ add_lunch_combo sokp_sprout-userdebug
 add_lunch_combo sokp_ks01lte-userdebug
 add_lunch_combo sokp_victara-userdebug
 add_lunch_combo sokp_tomato-userdebug
+add_lunch_combo sokp_titan-userdebug
