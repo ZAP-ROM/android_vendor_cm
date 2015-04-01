@@ -39,7 +39,7 @@ Repositories:
 
 Before you continue --> run this in the terminal
 ----------------------------------------
-    repo init -u git://github.com/SOKP/android.git -b sokp-l5 
+    repo init -u git://github.com/SOKP/android.git -b sokp-l5.1 
     
     && 
     
