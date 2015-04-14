@@ -164,7 +164,8 @@ include vendor/sokp/config/themes_common.mk
 PRODUCT_PACKAGES += \
     Development \
     LatinIME \
-    BluetoothExt
+    BluetoothExt \
+	SonicLauncher
 
 # Optional SOKP packages
 PRODUCT_PACKAGES += \
