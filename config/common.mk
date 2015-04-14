@@ -147,7 +147,6 @@ PRODUCT_COPY_FILES += \
 	
 #SOKP FIles
 PRODUCT_COPY_FILES += \
-vendor/sokp/prebuilt/app/ApexLauncher_v3.0.2.apk:system/app/Apexlauncher/ApexLauncher_v3.0.2.apk \
 vendor/sokp/prebuilt/fonts/Roboto-Bold.ttf:system/fonts/Roboto-Bold.ttf \
 vendor/sokp/prebuilt/fonts/Roboto-BoldItalic.ttf:system/fonts/Roboto-BoldItalic.ttf \
 vendor/sokp/prebuilt/fonts/Roboto-Italic.ttf:system/fonts/Roboto-Italic.ttf \
