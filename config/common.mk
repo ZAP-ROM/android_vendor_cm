@@ -345,7 +345,8 @@ $(call prepend-product-if-exists, vendor/extra/product.mk)
 
 # statistics identity
   PRODUCT_PROPERTY_OVERRIDES += \
-  ro.romstats.url=http://stats.sonic-developers.com/ \
+  SOKP-L-5.1-LMY47I-R1
+  ro.romstats.url=http://statistics.sonic-developers.com/ \
   ro.romstats.name=SOKP \
   ro.romstats.version=-$(SOKP_Version) \
   ro.romstats.askfirst=0 \
