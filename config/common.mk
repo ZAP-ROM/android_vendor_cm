@@ -335,7 +335,7 @@ SQUISHER_SCRIPT := vendor/sokp/tools/squisher
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.sokp.display.version=$(SOKP_DISPLAY_VERSION)
+  ro.sokp.display.version=$(SOKP_Version)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
@@ -345,7 +345,6 @@ $(call prepend-product-if-exists, vendor/extra/product.mk)
 
 # statistics identity
   PRODUCT_PROPERTY_OVERRIDES += \
-  SOKP-L-5.1-LMY47I-R1
   ro.romstats.url=http://statistics.sonic-developers.com/ \
   ro.romstats.name=SOKP \
   ro.romstats.version=-$(SOKP_Version) \
