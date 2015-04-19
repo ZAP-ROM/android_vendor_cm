@@ -152,8 +152,7 @@ vendor/sokp/prebuilt/fonts/Roboto-BoldItalic.ttf:system/fonts/Roboto-BoldItalic.
 vendor/sokp/prebuilt/fonts/Roboto-Italic.ttf:system/fonts/Roboto-Italic.ttf \
 vendor/sokp/prebuilt/fonts/Roboto-Light.ttf:system/fonts/Roboto-Light.ttf \
 vendor/sokp/prebuilt/fonts/Roboto-LightItalic.ttf:system/fonts/Roboto-LightItalic.ttf \
-vendor/sokp/prebuilt/fonts/Roboto-Regular.ttf:system/fonts/Roboto-Regular.ttf \
-vendor/sokp/prebuilt/priv-app/SetupWizard.apk:system/priv-app/SetupWizard/SetupWizard.apk 
+vendor/sokp/prebuilt/fonts/Roboto-Regular.ttf:system/fonts/Roboto-Regular.ttf
 	
 
 # T-Mobile theme engine
