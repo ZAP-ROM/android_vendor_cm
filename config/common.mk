@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= SOKP
+PRODUCT_BRAND ?= ZAP
 
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
 # determine the smaller dimension
@@ -10,7 +10,7 @@ TARGET_BOOTANIMATION_SIZE := $(shell \
   fi )
 
 # get a sorted list of the sizes
-bootanimation_sizes := $(subst .zip,, $(shell ls vendor/sokp/prebuilt/common/bootanimation))
+bootanimation_sizes := $(subst .zip,, $(shell ls vendor/zap/prebuilt/common/bootanimation))
 bootanimation_sizes := $(shell echo -e $(subst $(space),'\n',$(bootanimation_sizes)) | sort -rn)
 
 # find the appropriate size and set
@@ -27,9 +27,9 @@ endef
 $(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size)))
 
 ifeq ($(TARGET_BOOTANIMATION_HALF_RES),true)
-PRODUCT_BOOTANIMATION := vendor/sokp/prebuilt/common/bootanimation/halfres/$(TARGET_BOOTANIMATION_NAME).zip
+PRODUCT_BOOTANIMATION := vendor/zap/prebuilt/common/bootanimation/halfres/$(TARGET_BOOTANIMATION_NAME).zip
 else
-PRODUCT_BOOTANIMATION := vendor/sokp/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip
+PRODUCT_BOOTANIMATION := vendor/zap/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip
 endif
 endif
 
@@ -100,38 +100,38 @@ endif
 
 # Copy over the changelog to the device
 PRODUCT_COPY_FILES += \
-    vendor/sokp/CHANGELOG.mkdn:system/etc/CHANGELOG-SOKP.txt
+    vendor/zap/CHANGELOG.mkdn:system/etc/CHANGELOG-ZAP.txt
 
 # Backup Tool
 ifneq ($(WITH_GMS),true)
 PRODUCT_COPY_FILES += \
-    vendor/sokp/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/sokp/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/sokp/prebuilt/common/bin/50-sokp.sh:system/addon.d/50-sokp.sh \
-    vendor/sokp/prebuilt/common/bin/blacklist:system/addon.d/blacklist
+    vendor/zap/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/zap/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/zap/prebuilt/common/bin/50-zap.sh:system/addon.d/50-zap.sh \
+    vendor/zap/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 endif
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
-    vendor/sokp/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
+    vendor/zap/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/sokp/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/sokp/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/zap/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/zap/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # userinit support
 PRODUCT_COPY_FILES += \
-    vendor/sokp/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
+    vendor/zap/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
-# SOKP-specific init file
+# zap-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/sokp/prebuilt/common/etc/init.local.rc:root/init.sokp.rc
+    vendor/zap/prebuilt/common/etc/init.local.rc:root/init.zap.rc
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
-    vendor/sokp/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/sokp/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+    vendor/zap/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
+    vendor/zap/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -141,40 +141,40 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
 
-# This is SOKP Based!
+# This is ZAP Based!
 PRODUCT_COPY_FILES += \
-    vendor/sokp/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
+    vendor/zap/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 	
-#SOKP FIles
+#ZAP FIles
 PRODUCT_COPY_FILES += \
-vendor/sokp/prebuilt/fonts/Roboto-Bold.ttf:system/fonts/Roboto-Bold.ttf \
-vendor/sokp/prebuilt/fonts/Roboto-BoldItalic.ttf:system/fonts/Roboto-BoldItalic.ttf \
-vendor/sokp/prebuilt/fonts/Roboto-Italic.ttf:system/fonts/Roboto-Italic.ttf \
-vendor/sokp/prebuilt/fonts/Roboto-Light.ttf:system/fonts/Roboto-Light.ttf \
-vendor/sokp/prebuilt/fonts/Roboto-LightItalic.ttf:system/fonts/Roboto-LightItalic.ttf \
-vendor/sokp/prebuilt/fonts/Roboto-Regular.ttf:system/fonts/Roboto-Regular.ttf
+vendor/zap/prebuilt/fonts/Roboto-Bold.ttf:system/fonts/Roboto-Bold.ttf \
+vendor/zap/prebuilt/fonts/Roboto-BoldItalic.ttf:system/fonts/Roboto-BoldItalic.ttf \
+vendor/zap/prebuilt/fonts/Roboto-Italic.ttf:system/fonts/Roboto-Italic.ttf \
+vendor/zap/prebuilt/fonts/Roboto-Light.ttf:system/fonts/Roboto-Light.ttf \
+vendor/zap/prebuilt/fonts/Roboto-LightItalic.ttf:system/fonts/Roboto-LightItalic.ttf \
+vendor/zap/prebuilt/fonts/Roboto-Regular.ttf:system/fonts/Roboto-Regular.ttf
 	
 
 # T-Mobile theme engine
-include vendor/sokp/config/themes_common.mk
+include vendor/zap/config/themes_common.mk
 
-# Required SOKP packages
+# Required ZAP packages
 PRODUCT_PACKAGES += \
     Development \
     LatinIME \
     BluetoothExt \
 	SonicLauncher
 
-# Optional SOKP packages
+# Optional ZAP packages
 PRODUCT_PACKAGES += \
     VoicePlus \
     Basic \
     libemoji 
     
-# Custom SOKP packages
+# Custom ZAP packages
 PRODUCT_PACKAGES += \
     Launcher3 \
-    SOKPStats \
+    ZAPStats \
     SonicPapers \
     Trebuchet \
     CMHome \
@@ -183,12 +183,12 @@ PRODUCT_PACKAGES += \
     LockClock \
     CyanogenSetupWizard
 
-# SOKP Hardware Abstraction Framework
+# ZAP Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
     org.cyanogenmod.hardware.xml
 
-# Extra tools in SOKP
+# Extra tools in ZAP
 PRODUCT_PACKAGES += \
     libsepol \
     e2fsck \
@@ -245,96 +245,96 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/sokp/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/zap/overlay/common
 
 PRODUCT_VERSION_MAJOR = L-5.1-LMY47I
 PRODUCT_VERSION_MINOR = R1
 PRODUCT_VERSION_MAINTENANCE = 0
 
-# Set SOKP_BUILDTYPE from the env RELEASE_TYPE, for jenkins compat
+# Set ZAP_BUILDTYPE from the env RELEASE_TYPE, for jenkins compat
 
-ifndef SOKP_BUILDTYPE
+ifndef ZAP_BUILDTYPE
     ifdef RELEASE_TYPE
-        # Starting with "SOKP_" is optional
-        RELEASE_TYPE := $(shell echo $(RELEASE_TYPE) | sed -e 's|^SOKP_||g')
-        SOKP_BUILDTYPE := $(RELEASE_TYPE)
+        # Starting with "ZAP_" is optional
+        RELEASE_TYPE := $(shell echo $(RELEASE_TYPE) | sed -e 's|^ZAP_||g')
+        ZAP_BUILDTYPE := $(RELEASE_TYPE)
     endif
 endif
 
 # Filter out random types, so it'll reset to UNOFFICIAL
-ifeq ($(filter RELEASE NIGHTLY SNAPSHOT EXPERIMENTAL,$(SOKP_BUILDTYPE)),)
-    SOKP_BUILDTYPE :=
+ifeq ($(filter RELEASE NIGHTLY SNAPSHOT EXPERIMENTAL,$(ZAP_BUILDTYPE)),)
+    ZAP_BUILDTYPE :=
 endif
 
-ifdef SOKP_BUILDTYPE
-    ifneq ($(SOKP_BUILDTYPE), SNAPSHOT)
-        ifdef SOKP_EXTRAVERSION
+ifdef ZAP_BUILDTYPE
+    ifneq ($(ZAP_BUILDTYPE), SNAPSHOT)
+        ifdef ZAP_EXTRAVERSION
             # Force build type to EXPERIMENTAL
-            SOKP_BUILDTYPE := EXPERIMENTAL
-            # Remove leading dash from SOKP_EXTRAVERSION
-            SOKP_EXTRAVERSION := $(shell echo $(SOKP_EXTRAVERSION) | sed 's/-//')
-            # Add leading dash to SOKP_EXTRAVERSION
-            SOKP_EXTRAVERSION := -$(SOKP_EXTRAVERSION)
+            ZAP_BUILDTYPE := EXPERIMENTAL
+            # Remove leading dash from ZAP_EXTRAVERSION
+            ZAP_EXTRAVERSION := $(shell echo $(ZAP_EXTRAVERSION) | sed 's/-//')
+            # Add leading dash to ZAP_EXTRAVERSION
+            ZAP_EXTRAVERSION := -$(ZAP_EXTRAVERSION)
         endif
     else
-        ifndef SOKP_EXTRAVERSION
+        ifndef ZAP_EXTRAVERSION
             # Force build type to EXPERIMENTAL, SNAPSHOT mandates a tag
-            SOKP_BUILDTYPE := EXPERIMENTAL
+            ZAP_BUILDTYPE := EXPERIMENTAL
         else
-            # Remove leading dash from SOKP_EXTRAVERSION
-            SOKP_EXTRAVERSION := $(shell echo $(SOKP_EXTRAVERSION) | sed 's/-//')
-            # Add leading dash to SOKP_EXTRAVERSION
-            SOKP_EXTRAVERSION := -$(SOKP_EXTRAVERSION)
+            # Remove leading dash from ZAP_EXTRAVERSION
+            ZAP_EXTRAVERSION := $(shell echo $(ZAP_EXTRAVERSION) | sed 's/-//')
+            # Add leading dash to ZAP_EXTRAVERSION
+            ZAP_EXTRAVERSION := -$(ZAP_EXTRAVERSION)
         endif
     endif
 else
-    # If SOKP_BUILDTYPE is not defined, set to UNOFFICIAL
-    SOKP_BUILDTYPE := UNOFFICIAL
-    SOKP_EXTRAVERSION :=
+    # If ZAP_BUILDTYPE is not defined, set to UNOFFICIAL
+    ZAP_BUILDTYPE := UNOFFICIAL
+    ZAP_EXTRAVERSION :=
 endif
 
-ifeq ($(SOKP_BUILDTYPE), UNOFFICIAL)
+ifeq ($(ZAP_BUILDTYPE), UNOFFICIAL)
     ifneq ($(TARGET_UNOFFICIAL_BUILD_ID),)
-        SOKP_EXTRAVERSION := -$(TARGET_UNOFFICIAL_BUILD_ID)
+        ZAP_EXTRAVERSION := -$(TARGET_UNOFFICIAL_BUILD_ID)
     endif
 endif
 
-ifeq ($(SOKP_BUILDTYPE), RELEASE)
+ifeq ($(ZAP_BUILDTYPE), RELEASE)
     ifndef TARGET_VENDOR_RELEASE_BUILD_ID
-        SOKP_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(SOKP_BUILD)
+        ZAP_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(ZAP_BUILD)
     else
         ifeq ($(TARGET_BUILD_VARIANT),user)
-            SOKP_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(TARGET_VENDOR_RELEASE_BUILD_ID)-$(SOKP_BUILD)
+            ZAP_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(TARGET_VENDOR_RELEASE_BUILD_ID)-$(ZAP_BUILD)
         else
-            SOKP_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(SOKP_BUILD)
+            ZAP_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(ZAP_BUILD)
         endif
     endif
 else
     ifeq ($(PRODUCT_VERSION_MINOR),1)
-        SOKP_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(shell date -u +%Y%m%d)-$(SOKP_BUILDTYPE)$(SOKP_EXTRAVERSION)-$(SOKP_BUILD)
+        ZAP_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(shell date -u +%Y%m%d)-$(ZAP_BUILDTYPE)$(ZAP_EXTRAVERSION)-$(ZAP_BUILD)
     else
-        SOKP_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(SOKP_BUILDTYPE)$(SOKP_EXTRAVERSION)-$(SOKP_BUILD)
+        ZAP_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(ZAP_BUILDTYPE)$(ZAP_EXTRAVERSION)-$(ZAP_BUILD)
     endif
 endif
 
-SOKP_Version= L-5.1-LMY47I-R1
-SOKP_MOD_VERSION := $(SOKP_Version)-$(shell date -u +%Y%m%d)$(SOKP_EXTRAVERSION)-$(SOKP_BUILD)
+ZAP_Version= L-5.1-LMY47I-R1
+ZAP_MOD_VERSION := $(ZAP_Version)-$(shell date -u +%Y%m%d)$(ZAP_EXTRAVERSION)-$(ZAP_BUILD)
  
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.sokp.version=$(SOKP_Version) \
-  ro.sokp.releasetype=$(SOKP_BUILDTYPE) \
-  ro.modversion=$(SOKP_MOD_VERSION) \
+  ro.zap.version=$(ZAP_Version) \
+  ro.zap.releasetype=$(ZAP_BUILDTYPE) \
+  ro.modversion=$(ZAP_MOD_VERSION) \
   ro.legal.url=http://sonic-developers.com/disclaimer/
 
--include vendor/sokp-priv/keys/keys.mk
+-include vendor/zap-priv/keys/keys.mk
 
-SQUISHER_SCRIPT := vendor/sokp/tools/squisher
+SQUISHER_SCRIPT := vendor/zap/tools/squisher
 
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.sokp.display.version=$(SOKP_Version)
+  ro.zap.display.version=$(ZAP_Version)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
@@ -345,7 +345,7 @@ $(call prepend-product-if-exists, vendor/extra/product.mk)
 # statistics identity
   PRODUCT_PROPERTY_OVERRIDES += \
   ro.romstats.url=http://statistics.sonic-developers.com/ \
-  ro.romstats.name=SOKP \
-  ro.romstats.version=-$(SOKP_Version) \
+  ro.romstats.name=ZAP \
+  ro.romstats.version=-$(ZAP_Version) \
   ro.romstats.askfirst=0 \
   ro.romstats.tframe=1

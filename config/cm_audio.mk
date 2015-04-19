@@ -1,11 +1,11 @@
 #
-# SOKP Audio Files
+# ZAP Audio Files
 #
 
-ALARM_PATH := vendor/sokp/prebuilt/common/media/audio/alarms
-NOTIFICATION_PATH := vendor/sokp/prebuilt/common/media/audio/notifications
-RINGTONE_PATH := vendor/sokp/prebuilt/common/media/audio/ringtones
-UI_PATH := vendor/sokp/prebuilt/common/media/audio/ui
+ALARM_PATH := vendor/zap/prebuilt/common/media/audio/alarms
+NOTIFICATION_PATH := vendor/zap/prebuilt/common/media/audio/notifications
+RINGTONE_PATH := vendor/zap/prebuilt/common/media/audio/ringtones
+UI_PATH := vendor/zap/prebuilt/common/media/audio/ui
 
 # Alarms
 PRODUCT_COPY_FILES += \

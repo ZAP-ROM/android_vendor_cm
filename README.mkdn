@@ -1,12 +1,13 @@
-SONIC OPEN KANG PROJECT
-===================
 
-SONIC OPEN KANG PROJECT platform manifest
+ZAP-ROM
+================ 
+
+ZAP-ROM manifest
 
 
 Getting Started
 ---------------
-To get started with the SONIC OPEN KANG PROJECT sources, you'll need to get
+To get started with the ZAP sources, you'll need to get
 familiar with [Git and Repo](http://source.android.com/source/version-control.html).
 
 
@@ -18,7 +19,7 @@ You will need to set up some directories in your build environment.
 To create them run:
 
     mkdir -p ~/bin
-    mkdir -p ~/SOKP
+    mkdir -p ~/ZAP
 
 
 Install the Repository
@@ -31,7 +32,7 @@ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/rep
 You may need to reboot for these changes to take effect. 
 Now enter the following to initialize the repository:
 
-    cd ~/SOKP
+    cd ~/ZAP
 
 
 Repositories:
@@ -39,7 +40,7 @@ Repositories:
 
 Before you continue --> run this in the terminal
 ----------------------------------------
-    repo init -u git://github.com/SOKP/android.git -b sokp-l5.1 
+    repo init -u git://github.com/ZAP/zap.git -b zap 
     
     && 
     
@@ -50,27 +51,30 @@ if you wish to avoid this issue run it repo sync -j1 otherwise -f (force) is rec
 
 
 Building the System
----------------
+-------------------
 
 Initialize the environment with the envsetup.sh script. Note that replacing "source" with a single dot saves a few characters, and the short form is more commonly used in documentation.
 
     . build/envsetup.sh
-    brunch n7100 ( Replace n7100 with your device name if you are building for other devices )
+    brunch tomato ( Replace tomato with your device name if you are building for other devices )
 
 You can also build (and see how long it took) for specific devices like this:
 
 Build the Code:
 
     . build/envsetup.sh
-    time brunch n7100 ( Replace n7100 with your device name if you are building for other devices )
+    time brunch tomato ( Replace tomato with your device name if you are building for other devices )
 
 
 Submitting Patches
 ------------------
-Updated Soon
+For time beeing you can send us pull request..Soon we are adding  gerrit review for ZAP.
 
 Git TrickMarks
 ------------------
 Creating a git branch with no ancestry git checkout --orphan git rm --cached $(git ls-files) git add NOTICE git commit -m "dummy commit" Then u push the goodies ;)
 
-If you have any issues/questions please contact us in email id : audiogod@live.com If you need any live help contact us in hangouts id : audiogod@live.com
+Official Contact Details 
+------------------------
+Hangouts: zeetherocker@gmail.com 
+ZAP Source Link: https://github.com/ZAP-ROM 

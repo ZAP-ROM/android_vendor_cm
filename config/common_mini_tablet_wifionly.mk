@@ -1,8 +1,8 @@
-# Inherit common SOKP stuff
-$(call inherit-product, vendor/sokp/config/common.mk)
+# Inherit common ZAP stuff
+$(call inherit-product, vendor/zap/config/common.mk)
 
-# Include SOKP audio files
-include vendor/sokp/config/cm_audio.mk
+# Include ZAP audio files
+include vendor/zap/config/cm_audio.mk
 
 # Default notification/alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -11,5 +11,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ifeq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
     PRODUCT_COPY_FILES += \
-        vendor/sokp/prebuilt/common/bootanimation/800.zip:system/media/bootanimation.zip
+        vendor/zap/prebuilt/common/bootanimation/800.zip:system/media/bootanimation.zip
 endif

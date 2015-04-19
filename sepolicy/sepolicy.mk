@@ -1,10 +1,10 @@
 #
 # This policy configuration will be used by all products that
-# inherit from SOKP
+# inherit from ZAP
 #
 
 BOARD_SEPOLICY_DIRS += \
-    vendor/sokp/sepolicy
+    vendor/zap/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     file.te \

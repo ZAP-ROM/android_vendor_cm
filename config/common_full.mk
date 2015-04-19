@@ -1,20 +1,20 @@
-# Inherit common SOKP stuff
-$(call inherit-product, vendor/sokp/config/common.mk)
+# Inherit common ZAP stuff
+$(call inherit-product, vendor/zap/config/common.mk)
 
-# Include SOKP audio files
-include vendor/sokp/config/cm_audio.mk
+# Include ZAP audio files
+include vendor/zap/config/cm_audio.mk
 
-# Include SOKP LatinIME dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/sokp/overlay/dictionaries
+# Include ZAP LatinIME dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/zap/overlay/dictionaries
 
-# Optional SOKP packages
+# Optional ZAP packages
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     PhotoTable \
     SoundRecorder \
     PhotoPhase
 
-# Extra tools in SOKP
+# Extra tools in ZAP
 PRODUCT_PACKAGES += \
     vim \
     zip \

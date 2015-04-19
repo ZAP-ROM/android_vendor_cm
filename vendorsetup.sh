@@ -1,17 +1,2 @@
-add_lunch_combo sokp_condor-userdebug
-add_lunch_combo sokp_falcon-userdebug
-add_lunch_combo sokp_ghost-userdebug
-add_lunch_combo sokp_hammerhead-userdebug
-add_lunch_combo sokp_i9082-userdebug
-add_lunch_combo sokp_i9500-userdebug
-add_lunch_combo sokp_jflte-userdebug
-add_lunch_combo sokp_klte-userdebug
-add_lunch_combo sokp_p3100-userdebug
-add_lunch_combo sokp_p3110-userdebug
-add_lunch_combo sokp_shamu-userdebug
-add_lunch_combo sokp_sprout-userdebug
-add_lunch_combo sokp_ks01lte-userdebug
-add_lunch_combo sokp_victara-userdebug
-add_lunch_combo sokp_tomato-userdebug
-add_lunch_combo sokp_titan-userdebug
-add_lunch_combo sokp_bacon-userdebug
+
+add_lunch_combo zap_tomato-userdebug

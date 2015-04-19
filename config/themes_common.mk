@@ -4,4 +4,4 @@ PRODUCT_PACKAGES += \
     ThemesProvider
 
 PRODUCT_COPY_FILES += \
-    vendor/sokp/config/permissions/org.cyanogenmod.theme.xml:system/etc/permissions/org.cyanogenmod.theme.xml
+    vendor/zap/config/permissions/org.cyanogenmod.theme.xml:system/etc/permissions/org.cyanogenmod.theme.xml
